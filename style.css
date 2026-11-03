@@ -414,20 +414,27 @@ a {
     margin-bottom: 12px;
 }
 
-.footer-links,
+/*.footer-links,
 .footer-apps {
     display: flex;
     flex-direction: column;
     gap: 8px;
-}
+}*/
 
 .footer a {
     color: #ddd;
     font-size: 12px;
 }
 
-.footer a:hover {
-    color: #3f87f5;
+
+.footer-apps img {
+    width: 135px;
+    height: auto;
+    display: block;
+}
+
+.footer-apps a:hover {
+    opacity: 0.8;
 }
 
 
@@ -576,6 +583,16 @@ a {
         align-items: center;
         text-align: center;
         gap: 25px;
+    }
+
+    .footer-apps img {
+        width: 135px;
+        height: auto;
+        display: block;
+    }
+
+    .footer-apps a:hover {
+        opacity: 0.8;
     }
 
     .footer-apps {
