@@ -1,17 +1,15 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+html,
 body {
     font-family: 'Poppins', sans-serif;
     color: #231d44;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -30,8 +28,7 @@ a {
     margin-bottom: 60px;
 }
 
-
-/* Navigation Bar */
+/*Nav Bar*/
 .header {
     background-color: white;
     position: sticky;
@@ -44,6 +41,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: relative;
 }
 
 .logo {
@@ -64,16 +62,70 @@ a {
 }
 
 .nav-links a:hover {
-    color: #3f87f5;
+    color: #f53f97;
 }
 
 
-/* Hero Section */
+/*Mobile Menue*/
+.navbar .mobile-menu {
+    display: none;
+}
+
+/*Hamburger*/
+.mobile-menu-toggle {
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    line-height: 1;
+
+}
+
+/* Mobile Dropdown */
+.navbar .mobile-menu-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background:rgba(91, 85, 89, 0.627);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Navigation Links */
+.mobile-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    list-style: none;
+}
+
+.mobile-menu-list a {
+    color: white;
+    font-size: 16px;
+}
+
+.mobile-menu-list a:hover {
+    color: #8ac4ff;
+}
+
+.navbar .mobile-menu-items.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+
+/*Hero Section*/
 .hero {
     min-height: 500px;
+
     background:
-        linear-gradient(rgba(0,0,0,0.45),
-                        rgba(0,0,0,0.45)),
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
         url("images/hero.jpg") center/cover no-repeat;
 
     display: flex;
@@ -99,14 +151,12 @@ a {
     margin-bottom: 25px;
 }
 
-
-/* Common Buttons */
 .btn {
     display: inline-block;
     padding: 12px 28px;
     border-radius: 5px;
-    font-weight: 600;
     font-size: 14px;
+    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -124,8 +174,6 @@ a {
     opacity: 0.85;
 }
 
-
-/* About Section */
 .about {
     display: flex;
     align-items: center;
@@ -154,8 +202,6 @@ a {
     color: #666;
 }
 
-
-/* Package Section */
 .packages {
     padding: 60px 0;
 }
@@ -177,7 +223,7 @@ a {
 
 .package-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .package-card h2 {
@@ -207,13 +253,14 @@ a {
     margin-bottom: 8px;
 }
 
-/* Checkmarks before features */
+/* Checkmarks */
 .package-card li::before {
     content: "✓";
     color: #5243c2;
     margin-right: 8px;
 }
 
+/* Choose Plan Button */
 .plan-btn {
     display: block;
     text-align: center;
@@ -225,11 +272,12 @@ a {
     font-weight: 600;
 }
 
+
 /* Featured Package */
 .featured {
     background: #3f87f5;
     color: white;
-    box-shadow: 0 12px 25px rgba(63,135,245,0.3);
+    box-shadow: 0 12px 25px rgba(63, 135, 245, 0.3);
     transform: translateY(-20px);
 }
 
@@ -250,6 +298,7 @@ a {
     background: white;
 }
 
+/* Badge */
 .hot {
     position: absolute;
     right: 15px;
@@ -262,7 +311,8 @@ a {
 }
 
 
-/* Testimonials */
+/*Testimonials*/
+
 .testimonials {
     padding: 70px 0;
 }
@@ -277,7 +327,7 @@ a {
     padding: 30px 20px;
     text-align: center;
     background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
@@ -304,8 +354,6 @@ a {
     color: #777;
 }
 
-
-/* FAQ Section */
 .faq {
     padding: 70px 0 100px;
 }
@@ -344,8 +392,6 @@ a {
     border-radius: 5px;
 }
 
-
-/* Footer */
 .footer {
     background: #0b0d17;
     color: white;
@@ -385,40 +431,97 @@ a {
 }
 
 
-/* Responsive Design */
+/*Mobile version*/
+
 @media (max-width: 768px) {
 
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 20px;
+        max-width: 400px;
     }
 
     .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+    }
+
+    /* To Show hamburger */
+    .navbar .mobile-menu {
+        display: block;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .hero {
+        min-height: 500px;
+        background-position: center;
     }
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 35px;
     }
 
     .about {
         flex-direction: column;
+        gap: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .about-text {
+        order: 1;
+        width: 100%;
     }
 
     .about img {
+        order: 2;
         width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 22px;
+    }
+
+    .about-text p {
+        font-size: 12px;
+    }
+
+    .packages {
+        padding: 40px 0;
     }
 
     .package-list {
         flex-direction: column;
-        gap: 35px;
+        align-items: center;
+        gap: 30px;
     }
 
     .package-card {
+        flex: none;
         width: 100%;
         max-width: 350px;
+        padding: 25px;
     }
 
     .featured {
@@ -429,19 +532,61 @@ a {
         transform: translateY(-10px);
     }
 
+    .testimonials {
+        padding: 50px 0;
+    }
+
     .client-list {
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .client-card {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .faq {
+        padding: 50px 0;
     }
 
     .faq-content {
         flex-direction: column;
+        gap: 25px;
     }
 
     .faq-content img {
         width: 100%;
+        order: 1;
+    }
+
+    .faq-questions {
+        width: 100%;
+        order: 2;
+    }
+
+    .footer {
+        padding: 40px 0;
     }
 
     .footer-content {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .footer-apps {
+        order: 1;
+    }
+
+    .footer-links {
+        order: 2;
+    }
+
+    .footer-content > p {
+        order: 3;
     }
 }

@@ -14,18 +14,42 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Nav Bar -->
     <header class="header">
-        <nav class="navbar container">
-            <a href="#home" class="logo">Abacus Convention Center</a>
+    <nav class="navbar container">
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#packages">Subscribe</a></li>
-            </ul>
-        </nav>
+        <a href="#home" class="logo">
+            Abacus Convention Center
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#packages">Subscribe</a></li>
+        </ul>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+
+            <!-- Hamburger Button -->
+            <button class="mobile-menu-toggle" type="button">
+               &#9776;
+            </button>
+
+            <div class="mobile-menu-items">
+                <ul class="mobile-menu-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
     </header>
 
     <main>
@@ -302,5 +326,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
