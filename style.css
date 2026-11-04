@@ -77,11 +77,14 @@ a {
 
 /*Hamburger*/
 .mobile-menu-toggle {
-    font-size: 28px;
-    color: #333;
-    cursor: pointer;
-    line-height: 1;
+    background: none;
+    border: none;
+}
 
+.mobile-menu-toggle img {
+    display: block;
+    width: 30px;
+    height: auto;
 }
 
 /* Mobile Dropdown */
@@ -124,6 +127,7 @@ a {
 /*Hero Section*/
 .hero {
     min-height: 584px;
+    position: relative;
 
     background: linear-gradient(180deg,
      rgba(0, 0, 0, 0.55) 21.92%, 
@@ -138,6 +142,9 @@ a {
     text-align: center;
     color: white;
     padding-top: 106px;
+
+    animation: heroSlider 15s infinite;
+
 }
 
 .hero-content {
@@ -611,7 +618,10 @@ a {
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 14px;
+        font-style: bold;
+        font-weight: 700;
+        line-height: 100%;
         max-width: 400px;
     }
 
@@ -634,11 +644,11 @@ a {
     }
 
     .hero h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .hero p {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .hero-content {
@@ -660,19 +670,22 @@ a {
     .about-text {
         order: 1;
         width: 100%;
+        
     }
 
     .about img {
         order: 2;
-        width: 100%;
+        width: 328px;
+        max-width: 100%;
+        height: 214px;
     }
 
     .about-text h2 {
-        font-size: 22px;
+        font-size: 19px;
     }
 
     .about-text p {
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .packages {
@@ -682,13 +695,18 @@ a {
     .package-list {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 50px;
+    }
+
+    .package .section-title{
+        font-size: 19px;
+        font-weight: 600;
     }
 
     .package-card {
         flex: none;
-        width: 100%;
-        max-width: 350px;
+        width: 232px;
+        max-width: 100%;
         padding: 25px;
     }
 
@@ -704,6 +722,11 @@ a {
         padding: 50px 0;
     }
 
+    .testimonial .section-title{
+        font-size: 19px;
+        font-weight: 600;
+    }
+
     .client-list {
         flex-direction: column;
         align-items: center;
@@ -712,8 +735,8 @@ a {
 
     .client-card {
         flex: none;
-        width: 100%;
-        max-width: 350px;
+        width: 294px;
+        max-width: 100%;
     }
 
     .faq {
@@ -725,14 +748,23 @@ a {
         gap: 25px;
     }
 
+    .faq .section-title {
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 50px;
+    }
+
     .faq-content img {
-        width: 100%;
+        width: 324px;
+        max-width: 100%;
+        height: 301px;
         order: 1;
     }
 
     .faq-questions {
         width: 100%;
         order: 2;
+        gap:16px;
     }
 
     .footer {
@@ -743,13 +775,14 @@ a {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 25px;
+        gap: 16px;
     }
 
     .footer-apps img {
         width: 135px;
         height: auto;
         display: block;
+        gap: 16;
     }
 
     .footer-apps a:hover {
